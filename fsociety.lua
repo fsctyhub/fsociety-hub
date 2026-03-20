@@ -1,4 +1,33 @@
-getgenv().fsociety = {
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Fsociety Hub",
+   LoadingTitle = "Fsociety Interface",
+   LoadingSubtitle = "by fsctyhub",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = "FsocietyConfig",
+      FileName = "MainConfig"
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "Fsociety Security",
+      Subtitle = "Key System",
+      Note = "Key: fsociety",
+      FileName = "FsocietyKey",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = {"fsociety"}
+   }
+})
+
+local MainTab = Window:CreateTab("Main Scripts", 4483362458)
+
+MainTab:CreateButton({
+   Name = "Execute Features",
+   Callback = function()
+            
+            getgenv().fsociety = {
     SilentAim = false, FOV = 220, Prediction = 0.14, TargetPart = "Head", TeamCheck = true, VisibleCheck = true, ShowFOV = true, FOVColor = Color3.fromRGB(0, 170, 255),
     WalkSpeed = 16, JumpPower = 50, DashSpeed = 300, DashHack = false,
     FastAttack = false, AttackSpeedMS = 10,
@@ -133,10 +162,11 @@ UIS.InputBegan:Connect(function(input, gp)
     end
 end)
 
-local success, err = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/fsctyhub/fsociety-hub/refs/heads/main/fsociety.lua"))()
-end)
-
-if not success then
-    warn(err)
-end
+Rayfield:Notify({
+         Title = "Fsociety Hub",
+         Content = "Features Activated!",
+         Duration = 5,
+         Image = 4483362458,
+      })
+   end,
+})
