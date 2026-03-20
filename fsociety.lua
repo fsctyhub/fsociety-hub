@@ -132,3 +132,11 @@ UIS.InputBegan:Connect(function(input, gp)
     elseif k == Enum.KeyCode.F8 then fsociety.AttackSpeedMS = math.clamp(fsociety.AttackSpeedMS - 5, 0, 300)
     end
 end)
+
+local success, err = pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/dariusfadlyadriel/fsociety-hub/main/fsociety.lua"))()
+end)
+
+if not success then
+    warn(err)
+end
