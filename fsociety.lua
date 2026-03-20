@@ -134,7 +134,7 @@ UIS.InputBegan:Connect(function(input, gp)
 end)
 
 local success, err = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/dariusfadlyadriel/fsociety-hub/main/fsociety.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fsctyhub/fsociety-hub/refs/heads/main/fsociety.lua"))()
 end)
 
 if not success then
